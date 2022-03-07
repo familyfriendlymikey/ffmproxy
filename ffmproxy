@@ -1,0 +1,21 @@
+#! /usr/bin/env bash
+
+proxy_folder="/mnt/d/BL_proxy"
+
+shopt -s nullglob
+
+for vid in *.mp4 *.webm *.mov *.mkv; do
+	output_dir="$proxy_folder/$vid"
+	mkdir -p "$output_dir"
+	ffmpeg -n -loglevel error -stats -noautorotate \
+	-i "$vid" \
+	-pix_fmt yuv420p \
+	-g 1 \
+	-sn -an \
+	-vf colormatrix=bt601:bt709,scale=iw/4:ih/4:force_divisible_by=2 \
+	-c:v libx264 \
+	-crf 16 \
+	-preset superfast \
+	-tune fastdecode \
+	"$output_dir/proxy_25.avi"
+done
