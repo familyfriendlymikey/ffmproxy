@@ -35,7 +35,7 @@ else
 			paths.push filename
 
 for inpath, index in paths
-	p "Creating proxy \x1b[32m{index}/{paths.length}\x1b[0m: {inpath}"
+	p "Creating proxy \x1b[32m{index + 1}/{paths.length}\x1b[0m: {inpath}"
 
 	outdir = join proxy_folder, inpath
 	mkdirSync outdir, { recursive: yes }
