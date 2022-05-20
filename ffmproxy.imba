@@ -27,7 +27,7 @@ if process.argv.length >= 3
 			accessSync filename
 			paths.push filename
 		catch
-			p "File doesn't exist, quitting: '{filename}'"
+			p "\x1b[31mFile doesn't exist, quitting:\x1b[0m '{filename}'"
 			process.exit!
 else
 	for filename in readdirSync(".")
@@ -35,7 +35,7 @@ else
 			paths.push filename
 
 for inpath, index in paths
-	p "Creating proxy {index}/{paths.length}: {inpath}"
+	p "Creating proxy \x1b[32m{index}/{paths.length}\x1b[0m: {inpath}"
 
 	outdir = join proxy_folder, inpath
 	mkdirSync outdir, { recursive: yes }
