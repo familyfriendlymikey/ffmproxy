@@ -15,9 +15,9 @@ let frac = 4
 # END USER CONFIG
 
 let p = console.log
-import { mkdirSync, accessSync, readdirSync } from 'fs'
-import { extname, join } from 'path'
-import { spawnSync } from 'child_process'
+let { mkdirSync, accessSync, readdirSync } = require 'fs'
+let { extname, join } = require 'path'
+let { spawnSync } = require 'child_process'
 
 let paths = []
 if process.argv.length >= 3
