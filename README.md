@@ -16,7 +16,7 @@ You do not need to have imba installed.
 
 ## Installation
 ```
-curl "https://raw.githubusercontent.com/familyfriendlymikey/ffmproxy/main/ffmproxy" \
+curl "https://github.com/familyfriendlymikey/ffmproxy/releases/latest/download/ffmproxy" \
 --create-dirs -o ~/bin/ffmproxy && \
 chmod +x ~/bin/ffmproxy
 ```
